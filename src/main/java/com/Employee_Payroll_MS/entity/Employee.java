@@ -17,10 +17,13 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String firstMame;
+    private String lastMame;
     private String email;
     private double salary;
-    private String department;
+    private String department;;
+    private String position;
     private LocalDate joiningDate;
+
 
 }

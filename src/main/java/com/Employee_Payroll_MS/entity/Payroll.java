@@ -18,8 +18,9 @@ public class Payroll {
     private double grossSalary;
     private double tax;
     private double netSalary;
-    private LocalDate month;
+    private LocalDate payDate;
 
     @ManyToOne
+    @JoinColumn(name = "employee_id")
     private Employee employee;
 }

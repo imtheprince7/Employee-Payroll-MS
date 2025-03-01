@@ -19,15 +19,18 @@ public class PayrollService {
     private PayrollRepository payrollRepository;
 
     public Payroll calculatePayroll(PayrollRequest request) {
+// Fetching employee from database using the ID
         Employee employee = employeeRepository.findById(request.getEmployeeId())
                 .orElseThrow(() -> new RuntimeException("Employee not found!"));
 
+// Calculating tax based on employee's salary from the Db
         double tax = calculateTax(employee.getSalary());
         double netSalary = employee.getSalary() - tax;
 
+// Creating &  saving payroll
         Payroll payroll = new Payroll();
         payroll.setEmployee(employee);
-        payroll.setGrossSalary(employee.getSalary());
+        payroll.setGrossSalary(employee.getSalary()); // salary from Employee entity-class
         payroll.setTax(tax);
         payroll.setNetSalary(netSalary);
         payroll.setMonth(LocalDate.now());
