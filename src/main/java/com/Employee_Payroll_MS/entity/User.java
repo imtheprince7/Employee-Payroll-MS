@@ -13,5 +13,11 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private String role;       // For ADMIN, EMPLOYEE purpose
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    public enum Role {
+        ADMIN, EMPLOYEE
+    }
+
 }

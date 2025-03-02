@@ -8,9 +8,9 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public Employee addEmployee(Employee employee) {
-        if (employeeRepository.findByEmail(employee.getEmail())) {
-            throw new RuntimeException("Email already exists!");
+    public Employee addEmployee(Employee employee){
+        if(employeeRepository.existsByEmail(employee.getEmail())){
+            throw  new RuntimeException("Employee already registered !");
         }
         return employeeRepository.save(employee);
     }

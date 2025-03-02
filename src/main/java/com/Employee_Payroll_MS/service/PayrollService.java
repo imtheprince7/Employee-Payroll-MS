@@ -33,12 +33,16 @@ public class PayrollService {
         payroll.setGrossSalary(employee.getSalary()); // salary from Employee entity-class
         payroll.setTax(tax);
         payroll.setNetSalary(netSalary);
-        payroll.setMonth(LocalDate.now());
+        payroll.setPayDate(LocalDate.now());
 
         return payrollRepository.save(payroll);
     }
 
     private double calculateTax(double salary) {
-        // Tax calculation logic
+        if( salary >= 50000 &&  salary <= 80000 ) return salary * 0.05;
+        else if( salary > 80000 &&  salary <= 120000) return salary * 0.1;
+        else if( salary > 120000 &&  salary <= 160000) return salary * 0.15;
+        else if( salary > 160000 &&  salary <= 200000) return salary * 0.20;
+        else return salary * 0.25;
     }
 }
