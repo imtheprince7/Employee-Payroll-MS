@@ -38,8 +38,8 @@ A secure, cloud-based payroll system built with **Spring Boot** for automating s
 
 
 ## API Endpoints
-Method	  Endpoint	                Description
-POST	/api/auth/register	    Register new users (Admin role)
-POST	/api/auth/login	        Generate JWT token
-POST	/api/employees	        Add new employees (Admin-only)
-POST	/api/payroll/calculate	Calculate salary with tax deductions
+Method	  Endpoint	                Description <br>
+POST	/api/auth/register	    Register new users (Admin role) <br>
+POST	/api/auth/login	        Generate JWT token <br>
+POST	/api/employees	        Add new employees (Admin-only) <br>
+POST	/api/payroll/calculate	Calculate salary with tax deductions <br>
