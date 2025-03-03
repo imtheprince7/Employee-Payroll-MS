@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/employees")
 public class EmployeeController {
 
     @Autowired
@@ -18,4 +18,14 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.addEmployee(employee));
     }
 
+    // Get Employee by Email
+    @GetMapping("/email/{email}")
+    public ResponseEntity<Employee> getEmployeeByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(employeeService.getEmployeeByEmail(email));
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Long> getTotalEmployees() {
+        return ResponseEntity.ok(employeeService.getTotalEmployees());
+    }
 }
