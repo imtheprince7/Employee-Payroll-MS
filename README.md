@@ -24,7 +24,7 @@ A secure, cloud-based payroll system built with **Spring Boot** for automating s
 | Category       | Technologies                          |
 |----------------|---------------------------------------|
 | **Backend**    | Spring Boot, Spring Security, JPA     |
-| **Database**   | PostgreSQL                            |
+| **Database**   | MySQL                                 |
 | **Security**   | JWT, BCrypt Password Encoding         |
 | **Deployment** | Working*                              |
 
@@ -34,12 +34,11 @@ A secure, cloud-based payroll system built with **Spring Boot** for automating s
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/Employee-Payroll-MS.git
+   git clone https://github.com/imtheprince7/Employee-Payroll-MS.git
 
 
 ## API Endpoints
-Method	    
-Endpoint	                Description
+Method	  Endpoint	                Description
 POST	/api/auth/register	    Register new users (Admin role)
 POST	/api/auth/login	        Generate JWT token
 POST	/api/employees	        Add new employees (Admin-only)
